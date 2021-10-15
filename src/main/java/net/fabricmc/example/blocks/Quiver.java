@@ -23,7 +23,7 @@ public class Quiver extends Block implements BlockEntityProvider {
     }
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0.38f, 0f, 0.38f, 0.69f, 1f, 0.69f); //nice
+        return VoxelShapes.cuboid(0.38f, 0f, 0.38f, 0.69f, 6f/8f, 0.69f); //nice
     }
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
@@ -31,25 +31,25 @@ public class Quiver extends Block implements BlockEntityProvider {
     }
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        ItemStack PlayerhandItem = player.getMainHandStack();
+        ItemStack PlayerhandItem = player.getStackInHand(Hand.MAIN_HAND);
 
         BlockEntity blockEntity = world.getBlockEntity(pos);
             QuiverEntity bundleEntity = (QuiverEntity) blockEntity;
-            if(PlayerhandItem.getItem() == Items.ARROW && player.isSneaking())
+            if(PlayerhandItem.getItem() == Items.ARROW)
             {
                 if(PlayerhandItem.getCount() < 16)
                 {
                     bundleEntity.ArrowCount += 1;
-                    player.getMainHandStack().setCount(player.getStackInHand(player.preferredHand).getCount() - 1);
+                    player.getStackInHand(Hand.MAIN_HAND).setCount(player.getStackInHand(Hand.MAIN_HAND).getCount() - 1);
                 }
-                if(PlayerhandItem.getCount() >= 16)
+                else
                 {
                     bundleEntity.ArrowCount += 16;
-                    player.getMainHandStack().setCount(player.getStackInHand(player.preferredHand).getCount() - 16);
+                    player.getStackInHand(Hand.MAIN_HAND).setCount(player.getStackInHand(Hand.MAIN_HAND).getCount() - 16);
                 }
                 return ActionResult.SUCCESS;
             }
-            if(PlayerhandItem.getItem() == Items.AIR ^ !player.isSneaking())
+            else
             {
 
                 if(bundleEntity.ArrowCount > 0) {
@@ -74,6 +74,5 @@ public class Quiver extends Block implements BlockEntityProvider {
                 }
                 return ActionResult.SUCCESS;
             }
-        return ActionResult.PASS;
     }
 }

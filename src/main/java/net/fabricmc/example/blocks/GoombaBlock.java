@@ -30,11 +30,10 @@ public class GoombaBlock extends Block {
             if (player.getEquippedStack(EquipmentSlot.FEET).isOf(Items.LEATHER_BOOTS)) {
                 entity.damage(DamageSource.GENERIC, 1.0F);
             }
+            world.getBlockTickScheduler().schedule(pos, this, 25);
             BlockState air = Blocks.AIR.getDefaultState();
             world.setBlockState(new BlockPos(pos), air);
         }
-
-
         super.onSteppedOn(world, pos, state, entity);
     }
 }
