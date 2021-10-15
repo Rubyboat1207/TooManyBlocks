@@ -1,4 +1,4 @@
-package net.fabricmc.example.blocks;
+package com.rubyboat.oaob.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockEntityProvider;

@@ -1,4 +1,4 @@
-package net.fabricmc.example.blocks;
+package com.rubyboat.oaob.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -33,7 +33,9 @@ public class GoombaBlock extends Block {
             world.getBlockTickScheduler().schedule(pos, this, 25);
             BlockState air = Blocks.AIR.getDefaultState();
             world.setBlockState(new BlockPos(pos), air);
+
         }
         super.onSteppedOn(world, pos, state, entity);
     }
+
 }

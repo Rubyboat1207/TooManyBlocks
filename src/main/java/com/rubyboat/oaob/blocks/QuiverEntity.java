@@ -1,6 +1,6 @@
-package net.fabricmc.example.blocks;
+package com.rubyboat.oaob.blocks;
 
-import net.fabricmc.example.Main;
+import com.rubyboat.oaob.Main;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;

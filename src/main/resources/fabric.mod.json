@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.Main"
+      "com.rubyboat.oaob"
     ]
   },
   "mixins": [
