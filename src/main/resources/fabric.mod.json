@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "oaofb",
+  "id": "oaosb",
   "version": "${version}",
 
-  "name": "Obscene Amount Of Freaking Blocks",
+  "name": "Obscene Amount Of Blocks",
   "description": "Adds an obscene Amount of blocks",
   "authors": [
-    "Me!"
+    "Rubyboat1207"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -14,12 +14,12 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/tmb/icon.png",
+  "icon": "assets/oaosb/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.fabricmc.example.Main"
     ]
   },
   "mixins": [

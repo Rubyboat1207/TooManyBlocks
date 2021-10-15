@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "oaofb:block/goomba_block"
+    "all": "oaosb:block/goomba_block"
   }
 }
