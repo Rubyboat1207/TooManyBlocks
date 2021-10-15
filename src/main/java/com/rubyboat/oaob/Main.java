@@ -1,5 +1,6 @@
 package com.rubyboat.oaob;
 
+import com.rubyboat.oaob.blocks.MarioBlock;
 import com.rubyboat.oaob.blocks.Quiver;
 import net.fabricmc.api.ModInitializer;
 import com.rubyboat.oaob.blocks.QuiverEntity;
@@ -35,7 +36,8 @@ public class Main implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		BlockAdder.BlockFactory("quiver", ARROW_BUNDLE, new FabricItemSettings().group(SERIOUS_BLOCKS));
-		BlockAdder.BlockFactory("goomba_block", new GoombaBlock(FabricBlockSettings.of(Material.SPONGE)), new FabricItemSettings().maxCount(65).fireproof().group(SILLY_BLOCKS));
+		BlockAdder.BlockFactory("goomba_block", new GoombaBlock(FabricBlockSettings.of(Material.SPONGE)), new FabricItemSettings().maxCount(17).fireproof().group(SILLY_BLOCKS));
+		BlockAdder.BlockFactory("mario_block", new MarioBlock(FabricBlockSettings.of(Material.SPONGE)), new FabricItemSettings().maxCount(44).fireproof().group(SILLY_BLOCKS));
 		ARROW_BUNDLE_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Modid, "quiver"), FabricBlockEntityTypeBuilder.create(QuiverEntity::new, ARROW_BUNDLE).build(null));
 
 	}

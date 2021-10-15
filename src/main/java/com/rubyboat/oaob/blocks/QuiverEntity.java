@@ -7,7 +7,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 
 public class QuiverEntity extends BlockEntity {
-    public int ArrowCount = 4;
+    public int ArrowCount = 0;
     public QuiverEntity(BlockPos pos, BlockState state) {
         super(Main.ARROW_BUNDLE_ENTITY, pos, state);
     }

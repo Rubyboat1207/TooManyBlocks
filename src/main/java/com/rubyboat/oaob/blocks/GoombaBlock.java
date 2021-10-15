@@ -27,7 +27,7 @@ public class GoombaBlock extends Block {
         if(entity.isPlayer())
         {
             PlayerEntity player = (PlayerEntity) entity;
-            if (player.getEquippedStack(EquipmentSlot.FEET).isOf(Items.LEATHER_BOOTS)) {
+            if (!player.getEquippedStack(EquipmentSlot.FEET).isOf(Items.LEATHER_BOOTS)) {
                 entity.damage(DamageSource.GENERIC, 1.0F);
             }
             world.getBlockTickScheduler().schedule(pos, this, 25);

@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.rubyboat.oaob"
+      "com.rubyboat.oaob.Main"
     ]
   },
   "mixins": [
